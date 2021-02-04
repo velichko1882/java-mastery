@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/style.css" th:href="@{css/style.css}" />
+    <title>Cinema</title>
+</head>
+
+<body>
+    <header>
+        <h1>Java Mastery - 2021</h1>
+    </header>
+    <nav>
+        <a th:href="@{/}">Main</a>
+        <a th:href="@{/films/all}">All Films</a>
+        <a th:href="@{/directors/all}">All Directors</a>
+    </nav>
+    <div class="content">
+        <form class="search_form" th:method="GET" th:action="@{/films/find}">
+            <div>
+                <p>Last Name</p>
+                <input class="input_name" type="text" name="lastName" value="" />
+            </div>
+            <div>
+                <p>Released from</p>
+                <input type="number" min="1895" max="2021" name="from" value="" />
+            </div>
+            <div>
+                <p>Released until</p>
+                <input type="number" min="1895" max="2021" name="until" value="" />
+            </div>
+            <div>
+                <input class="input_submit" type="submit" value="Search" />
+            </div>
+        </form>
+    </div>
+    <div style="height: 200px;"></div>
+    <footer>
+        <h3>Created by Valiantsin Vialichka</h3>
+        <a href="https://www.linkedin.com/in/valiantsin-vialichka-671b51166/">LinkedIn</a>
+    </footer>
+</body>
+
+</html>

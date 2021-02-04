@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/style.css" th:href="@{../css/style.css}" />
+    <title>All Directors</title>
+</head>
+
+<body>
+    <header>
+        <h1>Java Mastery - 2021</h1>
+    </header>
+    <nav>
+        <a th:href="@{/}">Main</a>
+        <a th:href="@{/films/all}">All Films</a>
+        <a th:href="@{/directors/all}">All Directors</a>
+    </nav>
+    <div class="content">
+        <h2>All Directors in Data Base</h2>
+        <ul th:each="director : ${directors}">
+            <li>
+                <strong th:text="${director.firstName}">first name</strong>
+                <a th:href="@{/directors/{id}(id=${director.id})}" th:text="${director.lastName}">last name</a>,
+                <strong th:text="${director.birthDate}">birth date</strong>
+            </li>
+        </ul>
+        <div style="padding: 30px;">
+            <a th:href="@{/directors/new}">Create New Director</a>
+        </div>
+    </div>
+    <footer>
+        <h3>Created by Valiantsin Vialichka</h3>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+body{
+  padding: 15px;
+  background-color: whitesmoke;
+}
+
+header{
+  padding: 15px;
+  background-color: dimgrey;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+}
+
+nav{
+  padding: 10px;
+  background-color:darkgray;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+nav a{
+  padding-right: 30px;
+}
+
+footer{
+  padding: 15px;
+  background-color: dimgray;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.content{
+  padding: 0px 100px 0px 100px;
+}
+
+.search_form{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.search_form div{
+}
+
+.search_form input{
+  box-sizing: content-box;
+  background-color: whitesmoke;
+  border: darkslategray solid 1px;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 0px;
+  font-size: 20px;
+  width: 200px;
+  height: 30px;
+}
+
+input.input_name{
+  width: 400px;
+}
+
+input.input_submit{
+  background-color: blue;
+  color: white;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+caption{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+th{
+  padding: 10px;
+  border: darkslategrey solid 1px;
+}
+
+td{
+  border: darkslategrey solid 1px;
+  padding: 5px;
+}
+
+.show{
+  padding: 30px;
+}

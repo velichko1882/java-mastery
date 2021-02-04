@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/style.css" th:href="@{../css/style.css}" />
+    <title>New Director</title>
+</head>
+
+<body>
+<header>
+    <h1>Java Mastery - 2021</h1>
+</header>
+<nav>
+    <a th:href="@{/}">Main</a>
+    <a th:href="@{/films/all}">All Films</a>
+    <a th:href="@{/directors/all}">All Directors</a>
+</nav>
+<div class="content">
+    <h3>Create New Director</h3>
+    <form th:method="POST" th:action="@{/directors}" th:object="${director}">
+        <label for="firstName">Enter First Name: </label>
+        <input type="text" th:field="*{firstName}" id="firstName"/>
+        <br>
+        <label for="lastName">Enter Last Name: </label>
+        <input type="text" th:field="*{lastName}" id="lastName"/>
+        <br>
+        <label for="birthDate">Enter Birth Date: </label>
+        <input type="date" th:field="*{birthDate}" id="birthDate"/>
+        <br>
+        <input type="submit" value="Create"/>
+    </form>
+</div>
+<div style="height: 200px;"></div>
+<footer>
+    <h3>Created by Valiantsin Vialichka</h3>
+    <a href="https://www.linkedin.com/in/valiantsin-vialichka-671b51166/">LinkedIn</a>
+</footer>
+</body>
+
+</html>

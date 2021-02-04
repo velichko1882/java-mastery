@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/style.css" th:href="@{../css/style.css}" />
+    <title>Director</title>
+</head>
+
+<body>
+<header>
+    <h1>Java Mastery - 2021</h1>
+</header>
+<nav>
+    <a th:href="@{/}">Main</a>
+    <a th:href="@{/films/all}">All Films</a>
+    <a th:href="@{/directors/all}">All Directors</a>
+</nav>
+<div class="content">
+    <div class="show">
+        <p>First name: <strong th:text="${director.firstName}">first name</strong></p>
+        <p>Last name: <strong th:text="${director.lastName}">last name</strong></p>
+        <p>Birth Date: <strong th:text="${director.birthDate}">birth date</strong></p>
+        <p>Films:</p>
+        <ul th:each="film : ${director.films}">
+            <li>
+                <a th:href="@{/films/{id}(id=${film.id})}"
+                   th:text="${film.name}">name</a>
+            </li>
+        </ul>
+    </div>
+    <div style="padding: 10px;">
+        <form th:method="GET" th:action="@{/films/new}">
+            <input type="number" name="directorId" th:attr="value=${director.id}" hidden>
+            <input type="submit" value="Add Film">
+        </form>
+    </div>
+    <div style="padding: 10px;">
+        <a th:href="@{/directors/{id}/edit(id=${director.id})}">Edit Director</a>
+    </div>
+    <div style="padding: 10px;">
+        <form th:method="DELETE" th:action="@{/directors/{id}(id=${director.id})}">
+            <input type="submit" value="Delete"/>
+        </form>
+    </div>
+</div>
+<footer>
+    <h3>Created by Valiantsin Vialichka</h3>
+    <a href="https://www.linkedin.com/in/valiantsin-vialichka-671b51166/">LinkedIn</a>
+</footer>
+</body>
+
+</html>

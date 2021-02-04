@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" media="all" href="../../../css/style.css" th:href="@{../css/style.css}" />
+    <title>All Films</title>
+</head>
+
+<body>
+    <header>
+        <h1>Java Mastery - 2021</h1>
+    </header>
+    <nav>
+        <a th:href="@{/}">Main</a>
+        <a th:href="@{/films/all}">All Films</a>
+        <a th:href="@{/directors/all}">All Directors</a>
+    </nav>
+    <div class="content">
+        <table>
+            <caption>All Films in DataBase</caption>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birth Date</th>
+                <th>Film Name</th>
+                <th>Release Date</th>
+                <th>Genre</th>
+            </tr>
+            <tr th:each="film : ${films}">
+                <td th:text="${film.director.firstName}">first name</td>
+                <td>
+                    <a th:href="@{/directors/{id}(id=${film.director.id})}"
+                       th:text="${film.director.lastName}">last name</a>
+                </td>
+                <td th:text="${film.director.birthDate}">birth date</td>
+                <td>
+                    <a th:href="@{/films/{id}(id=${film.id})}"
+                       th:text="${film.name}">name</a>
+                </td>
+                <td th:text="${film.releaseDate}">release date</td>
+                <td th:text="${film.genre}">genre</td>
+            </tr>
+        </table>
+    </div>
+    <footer>
+        <h3>Created by Valiantsin Vialichka</h3>
+    </footer>
+</body>
+
+</html>
